@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Financial Atelier
 
-## Getting Started
+Financial Atelier is a modern platform for managing, tracking, and analyzing personal or business finances. It helps you organize transactions, plan budgets, visualize spending, and forecast financial trends.
 
-First, run the development server:
+**README IS STILL IN PROGRESS, EXPECT SOME MISTAKES OR MISMATCHED CONTENT**
+
+---
+
+## Features
+
+- Dashboard with key financial metrics
+- Track income, expenses, and investments
+- Budget planning and monitoring
+- Predictive analytics and cash flow forecasts
+- Multi-account integration
+- Alerts for overspending or unusual activity
+- Export reports in PDF, CSV, or Excel
+
+---
+
+## Technology
+
+- **Frontend:** React (w/ Next.js)
+- **Backend:** Node.js with Express
+- **Database:** MongoDB
+- **Authentication:** JWT and OAuth2
+
+---
+
+## Installation
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Rahimsiddiqui/financial-atelier.git
+cd financial-atelier
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Configure environment variables:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+EMAILJS_SERVICE_ID=YOUR_SERVICE_ID
+EMAILJS_TEMPLATE_ID=YOUR_TEMPLATE_ID
+EMAILJS_PUBLIC_KEY=YOUR_PUBLIC_KEY
+EMAILJS_PRIVATE_KEY=YOUR_PRIVATE_KEY
+VITE_TURNSTILE_SITEKEY=YOUR_TURNSTILE_SITEKEY
+TURNSTILE_SECRET_KEY=YOUR_TURNSTILE_SECRET_KEY
+VITE_BACKEND_URL=http://localhost:5174
+UPSTASH_REDIS_REST_URL=YOUR_UPSTASH_REDIS_REST_URL
+UPSTASH_REDIS_REST_TOKEN=YOUR_UPSTASH_REDIS_REST_TOKEN
+```
