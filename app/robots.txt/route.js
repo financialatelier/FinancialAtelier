@@ -1,17 +1,20 @@
-# https://www.robotstxt.org/robotstxt.html
-
+export async function GET() {
+  const robots = `
 User-agent: *
 Allow: /
-Allow: /features
-Allow: /about
-Allow: /contact
 
-# Block private app routes and auth
 Disallow: /dashboard
 Disallow: /auth
 Disallow: /api
 Disallow: /admin
 Disallow: /settings
 
-# Host and Sitemap location
 Sitemap: https://financialatelier.vercel.app/sitemap.xml
+`.trim();
+
+  return new Response(robots, {
+    headers: {
+      "Content-Type": "text/plain",
+    },
+  });
+}
