@@ -5,7 +5,7 @@ export const metadata = {
   description:
     "Explore Financial Atelier's features: Real-time expense tracking, spending pattern analysis, and personal wealth management tools designed for clarity and control.",
   alternates: {
-    canonical: "https://projectfinancialatelier.vercel.app/features",
+    canonical: "https://financialatelier.vercel.app/features",
   },
 };
 

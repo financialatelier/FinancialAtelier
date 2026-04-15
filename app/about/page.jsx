@@ -5,7 +5,7 @@ export const metadata = {
   description:
     "The Financial Atelier is more than a platform; it is a digital boutique dedicated to the art of wealth preservation, where meticulous manual curation replaces automated noise.",
   alternates: {
-    canonical: "https://projectfinancialatelier.vercel.app/about",
+    canonical: "https://financialatelier.vercel.app/about",
   },
 };
 
@@ -20,7 +20,7 @@ export default function Page() {
       name: "Financial Atelier",
       description:
         "The Financial Atelier is more than a platform; it is a digital boutique dedicated to the art of wealth preservation, where meticulous manual curation replaces automated noise.",
-      url: "https://projectfinancialatelier.vercel.app",
+      url: "https://financialatelier.vercel.app",
       sameAs: [
         "https://github.com/Rahimsiddiqui/Financial-Atelier",
         "https://x.com/rahimdeveloper",

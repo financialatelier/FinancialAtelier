@@ -5,7 +5,7 @@ export const metadata = {
   description:
     "Have questions about wealth curation? Contact the Financial Atelier team today for personalized advisory, technical support, and bespoke financial strategies.",
   alternates: {
-    canonical: "https://projectfinancialatelier.vercel.app/contact",
+    canonical: "https://financialatelier.vercel.app/contact",
   },
 };
 
@@ -16,7 +16,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Financial Atelier",
-    url: "https://projectfinancialatelier.vercel.app",
+    url: "https://financialatelier.vercel.app",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
@@ -33,13 +33,13 @@ export default function Page() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://projectfinancialatelier.vercel.app",
+        item: "https://financialatelier.vercel.app",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Contact Us",
-        item: "https://projectfinancialatelier.vercel.app/contact",
+        item: "https://financialatelier.vercel.app/contact",
       },
     ],
   };
