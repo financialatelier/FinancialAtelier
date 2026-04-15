@@ -14,4 +14,4 @@ Disallow: /admin
 Disallow: /settings
 
 # Host and Sitemap location
-Sitemap: https://financial-atelier.vercel.app/sitemap.xml
+Sitemap: https://projectfinancialatelier.vercel.app/sitemap.xml

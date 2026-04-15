@@ -5,7 +5,7 @@ export const metadata = {
   description:
     "Master your wealth with Financial Atelier. Experience an editorial approach to expense tracking, budgeting, and wealth building with precision-engineered tools. Join 120,000+ users designing a smarter financial future for free.",
   alternates: {
-    canonical: "https://financial-atelier.vercel.app",
+    canonical: "https://projectfinancialatelier.vercel.app",
   },
 };
 
@@ -18,7 +18,7 @@ export default function Page() {
     name: "Financial Atelier",
     description:
       "Master your wealth with Financial Atelier. Experience an editorial approach to expense tracking, budgeting, and wealth building with precision-engineered tools. Join 120,000+ users designing a smarter financial future for free.",
-    url: "https://financial-atelier.vercel.app",
+    url: "https://projectfinancialatelier.vercel.app",
   };
 
   return (
