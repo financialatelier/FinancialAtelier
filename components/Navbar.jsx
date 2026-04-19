@@ -217,7 +217,7 @@ export default function Navbar() {
               <div className="pt-6 pb-8 flex flex-col text-[1rem] items-center justify-center gap-4">
                 <Link
                   href="/auth?mode=login"
-                  className="px-6 py-3.5 text-secondary/80 hover:text-secondary font-semibold transition-colors duration-200 rounded-lg leading-widest hover:bg-secondary/8 dark:hover:bg-surface"
+                  className="px-6 py-3.5 text-secondary/80 hover:text-secondary font-medium transition-colors duration-200 rounded-lg leading-widest hover:bg-secondary/8 dark:hover:bg-surface"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Login
@@ -253,7 +253,7 @@ export default function Navbar() {
 
         <Link
           href="/auth?mode=login"
-          className="px-6 py-3.5 text-secondary/80 hover:text-secondary font-bold transition-colors duration-200 rounded-lg font-manrope leading-widest hover:bg-secondary/8 dark:hover:bg-surface"
+          className="px-6 py-3.5 text-secondary/80 hover:text-secondary font-medium transition-colors duration-200 rounded-lg leading-widest hover:bg-secondary/8 dark:hover:bg-surface"
         >
           Login
         </Link>
