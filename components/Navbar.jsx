@@ -1,11 +1,14 @@
 "use client";
 
+// Third party imports
 import { useEffect, useRef, useState } from "react";
+import { Wallet, Menu, X, Moon, Sun } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import { Wallet, Menu, X, Moon, Sun } from "lucide-react";
+
+// Components
 import { useTheme } from "@/context/ThemeContext";
-import { usePathname } from "next/navigation";
 
 function useIsDesktop() {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -91,7 +94,7 @@ export default function Navbar() {
         <div className="hidden lg:flex justify-center items-center gap-10 text-sm">
           <Link
             href="/features"
-            className={`font-semibold transition-colors duration-200 tracking-wide font-manrope ${getClass(
+            className={`font-medium transition-colors duration-200 tracking-wide ${getClass(
               "/features",
             )}`}
           >
@@ -100,7 +103,7 @@ export default function Navbar() {
 
           <Link
             href="/about"
-            className={`font-semibold transition-colors duration-200 tracking-wide font-manrope ${getClass(
+            className={`font-medium transition-colors duration-200 tracking-wide ${getClass(
               "/about",
             )}`}
           >
@@ -109,7 +112,7 @@ export default function Navbar() {
 
           <Link
             href="/contact"
-            className={`font-semibold transition-colors duration-200 tracking-wide font-manrope ${getClass(
+            className={`font-medium transition-colors duration-200 tracking-wide ${getClass(
               "/contact",
             )}`}
           >
@@ -177,7 +180,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/features"
-                    className={`font-semibold transition-colors duration-200 tracking-wide font-manrope ${getClass(
+                    className={`font-medium transition-colors duration-200 tracking-wide ${getClass(
                       "/features",
                     )}`}
                     onClick={() => setIsMenuOpen(false)}
@@ -189,7 +192,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/about"
-                    className={`font-semibold transition-colors duration-200 tracking-wide font-manrope ${getClass(
+                    className={`font-medium transition-colors duration-200 tracking-wide ${getClass(
                       "/about",
                     )}`}
                     onClick={() => setIsMenuOpen(false)}
@@ -201,7 +204,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     href="/contact"
-                    className={`font-semibold transition-colors duration-200 tracking-wide font-manrope ${getClass(
+                    className={`font-medium transition-colors duration-200 tracking-wide ${getClass(
                       "/contact",
                     )}`}
                     onClick={() => setIsMenuOpen(false)}
@@ -214,7 +217,7 @@ export default function Navbar() {
               <div className="pt-6 pb-8 flex flex-col text-[1rem] items-center justify-center gap-4">
                 <Link
                   href="/auth?mode=login"
-                  className="px-6 py-3.5 text-secondary/80 hover:text-secondary font-bold transition-colors duration-200 rounded-lg font-manrope leading-widest hover:bg-secondary/8 dark:hover:bg-surface"
+                  className="px-6 py-3.5 text-secondary/80 hover:text-secondary font-semibold transition-colors duration-200 rounded-lg leading-widest hover:bg-secondary/8 dark:hover:bg-surface"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Login
