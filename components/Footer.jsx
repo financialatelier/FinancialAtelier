@@ -1,8 +1,9 @@
 "use client";
 
+// Third party imports
 import { Wallet } from "lucide-react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -104,48 +105,48 @@ export default function Footer() {
           </div>
           <div className="grid sm:grid-cols-2 justify-center items-center mt-12 lg:-mt-10 gap-10 lg:max-w-xl">
             <div>
-              <span className="text-sm tracking-widest font-manrope font-bold uppercase">
+              <h4 className="text-sm tracking-widest font-manrope font-bold uppercase">
                 Product
-              </span>
+              </h4>
               <ul className="flex flex-col justify-center lg:justify-start items-center gap-3 lg:items-start mt-5">
                 <li
-                  className={`font-semibold text-sm transition-colors duration-200 ${getClass("/features")} font-manrope max-w-fit`}
+                  className={`font-medium text-sm transition-colors duration-200 ${getClass("/features")} max-w-fit`}
                 >
                   <Link href="/features">Features</Link>
                 </li>
 
                 <li
-                  className={`font-semibold text-sm transition-colors duration-200 ${getClass("/opensource")} font-manrope max-w-fit`}
+                  className={`font-medium text-sm transition-colors duration-200 ${getClass("/opensource")} max-w-fit`}
                 >
                   <Link href="/opensource">Open Source</Link>
                 </li>
 
                 <li
-                  className={`font-semibold text-sm transition-colors duration-200 ${getClass("/security")} font-manrope max-w-fit`}
+                  className={`font-medium text-sm transition-colors duration-200 ${getClass("/security")} max-w-fit`}
                 >
                   <Link href="/security">Security</Link>
                 </li>
               </ul>
             </div>
             <div>
-              <span className="text-sm tracking-widest font-manrope font-bold uppercase">
+              <h4 className="text-sm tracking-widest font-manrope font-bold uppercase">
                 Company
-              </span>
+              </h4>
               <ul className="flex flex-col justify-center lg:justify-start items-center lg:items-start gap-3 mt-5">
                 <li
-                  className={`font-semibold text-sm transition-colors duration-200 ${getClass("/about")} font-manrope max-w-fit`}
+                  className={`font-medium text-sm transition-colors duration-200 ${getClass("/about")} max-w-fit`}
                 >
                   <Link href="/about">About</Link>
                 </li>
 
                 <li
-                  className={`font-semibold text-sm transition-colors duration-200 ${getClass("/careers")} font-manrope max-w-fit`}
+                  className={`font-medium text-sm transition-colors duration-200 ${getClass("/careers")} max-w-fit`}
                 >
                   <Link href="/careers">Careers</Link>
                 </li>
 
                 <li
-                  className={`font-semibold text-sm transition-colors duration-200 ${getClass("/contact")} font-manrope max-w-fit`}
+                  className={`font-medium text-sm transition-colors duration-200 ${getClass("/contact")} max-w-fit`}
                 >
                   <Link href="/contact">Contact</Link>
                 </li>
@@ -164,19 +165,19 @@ export default function Footer() {
             </div>
             <ul className="flex gap-5 sm:gap-15 justify-center lg:justify-center items-center max-w-3xl">
               <li
-                className={`font-bold transition-colors duration-200 ${getClass("/privacy")} font-manrope max-w-fit uppercase font-bold tracking-widest text-xs`}
+                className={`font-semibold transition-colors duration-200 ${getClass("/privacy")} max-w-fit uppercase font-bold tracking-widest text-xs`}
               >
                 <Link href="/privacy">Privacy Policy</Link>
               </li>
 
               <li
-                className={`font-bold transition-colors duration-200 ${getClass("/terms")} font-manrope max-w-fit uppercase font-bold tracking-widest text-xs`}
+                className={`font-semibold transition-colors duration-200 ${getClass("/terms")} max-w-fit uppercase font-bold tracking-widest text-xs`}
               >
                 <Link href="/terms">Terms of Service</Link>
               </li>
 
               <li
-                className={`font-bold transition-colors duration-200 ${getClass("/cookies")} font-manrope max-w-fit uppercase font-bold tracking-widest text-xs`}
+                className={`font-semibold transition-colors duration-200 ${getClass("/cookies")} max-w-fit uppercase font-bold tracking-widest text-xs`}
               >
                 <Link href="/cookies">Cookie Policy</Link>
               </li>
