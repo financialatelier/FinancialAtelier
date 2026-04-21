@@ -1,7 +1,16 @@
 import AuthClient from "./AuthClient";
 import { Suspense } from "react";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
-export default function Page() {
+export default async function Page() {
+  const cookieStore = await cookies();
+  const token = cookieStore.get("token")?.value;
+
+  if (token) {
+    redirect("/dashboard");
+  }
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <AuthClient />
