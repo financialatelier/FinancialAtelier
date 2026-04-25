@@ -4,6 +4,7 @@
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import { TrendingUp } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 // Animations
 import { fadeUp } from "@/lib/animations";
@@ -70,14 +71,14 @@ const Boilerplate = ({
               {...fadeUp(0.4)}
               className="hidden lg:block relative z-10 shadow-2xl shadow-primary/10 border-none"
             >
-              <div className="aspect-video">
-                <img
-                  alt="Person reviewing financial data"
-                  title="Person reviewing financial data"
-                  className="w-full h-full object-cover rounded-3xl dark:brightness-90"
+              <div className="aspect-video relative overflow-hidden rounded-3xl">
+                <Image
+                  alt="Professional artisan reviewing detailed financial growth charts in the Financial Atelier dashboard"
+                  title="Professional artisan reviewing detailed financial growth charts in the Financial Atelier dashboard"
+                  className="object-cover dark:brightness-90"
                   src="/hero_image.avif"
-                  loading="lazy"
-                  decoding="async"
+                  fill
+                  priority
                 />
               </div>
               <div className="flex relative">

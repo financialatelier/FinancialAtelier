@@ -92,10 +92,13 @@ export default function AuthClient() {
             </ul>
           </div>
           <div className="p-5 border text-base md:text-sm font-medium gap-4 border-border/30 rounded-xl bg-white/20 flex items-center">
-            <img
-              className="w-10 h-10"
+            <Image
+              className="rounded-full"
               src="/review_marcus.avif"
-              alt="Tru of Grid PFP"
+              alt="Marcus Chen - Software Architect and Financial Atelier member"
+              title="Marcus Chen - Software Architect and Financial Atelier member"
+              width={40}
+              height={40}
             />
 
             <div className="flex flex-col gap-2 pl-1 text-white dark:text-white/90">

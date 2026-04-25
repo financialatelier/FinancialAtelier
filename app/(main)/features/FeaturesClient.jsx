@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { m } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 // Components
 import Boilerplate from "@/components/Boilerplate";
@@ -47,13 +48,12 @@ export default function FeaturesClient() {
             learns your lifestyle.
           </p>
           <div className="mt-8 md:mt-9 relative w-full flex-1 overflow-hidden rounded-3xl min-h-48">
-            <img
+            <Image
               src="/transaction_tracking.avif"
               alt="Real-time Transaction Tracking"
               title="Real-time Transaction Tracking"
-              className="absolute inset-0 w-full h-full object-cover opacity-90 dark:brightness-80"
-              loading="lazy"
-              decoding="async"
+              className="object-cover opacity-90 dark:brightness-80"
+              fill
             />
           </div>
         </m.div>
@@ -117,13 +117,12 @@ export default function FeaturesClient() {
             </p>
           </div>
           <div className="mt-8 md:mt-9 lg:mt-0 relative w-full flex-1 overflow-hidden rounded-3xl min-h-48">
-            <img
+            <Image
               src="/savings_goals.avif"
               alt="Saving Goals"
               title="Savings Goals"
-              className="absolute inset-0 w-full h-full object-cover opacity-90 dark:brightness-90"
-              loading="lazy"
-              decoding="async"
+              className="object-cover opacity-90 dark:brightness-90"
+              fill
             />
           </div>
         </m.div>
@@ -173,12 +172,20 @@ export default function FeaturesClient() {
             </MotionLink>
           </div>
           <div className="relative h-70 md:h-auto">
-            <m.img
-              {...fadeUp(0.4)}
-              alt="Multi-Device Harmony"
-              className="w-full h-full object-cover rounded-2xl opacity-80 grayscale"
-              src="/multi_device.avif"
-            />
+            <m.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="w-full h-full relative"
+            >
+              <Image
+                alt="Continuous financial management experience across desktop, tablet, and mobile devices"
+                title="Continuous financial management experience across desktop, tablet, and mobile devices"
+                className="object-cover rounded-2xl opacity-80 grayscale"
+                src="/multi_device.avif"
+                fill
+              />
+            </m.div>
           </div>
         </div>
       </section>
@@ -227,12 +234,13 @@ export default function FeaturesClient() {
             {...fadeUp(0.4)}
             className="w-full md:w-[70%] aspect-3/4 bg-surface-highlight border border-border/20 mx-auto rounded-full p-4 shadow-sm relative"
           >
-            <div className="absolute inset-0 rounded-full overflow-hidden m-4">
-              <img
+            <div className="absolute inset-0 rounded-full overflow-hidden m-4 relative">
+              <Image
                 alt="The Atelier Difference"
                 title="The Atelier Difference"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 dark:brightness-90 transition-all duration-700"
+                className="object-cover grayscale hover:grayscale-0 dark:brightness-90 transition-all duration-700"
                 src="/atelier_difference.avif"
+                fill
               />
             </div>
           </m.div>

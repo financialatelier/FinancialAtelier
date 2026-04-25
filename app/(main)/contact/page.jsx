@@ -23,25 +23,6 @@ export default function Page() {
     },
   };
 
-  const breadcrumbLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://financialatelier.vercel.app",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Contact Us",
-        item: "https://financialatelier.vercel.app/contact",
-      },
-    ],
-  };
-
   return (
     <>
       <script
@@ -49,12 +30,7 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
-      />
-
       <ContactClient />
     </>
   );
-}
+  }

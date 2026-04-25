@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState } from "react";
 import { m } from "framer-motion";
 import { Wallet } from "lucide-react";
+import Image from "next/image";
 
 // Components
 import CountUp from "@/components/CountUp";
@@ -309,40 +310,40 @@ export default function LandingPageClient() {
               className="flex flex-col bg-surface-highlight p-8 rounded-3xl space-y-6 shadow-sm transition-colors duration-300 ease"
             >
               <div className="flex gap-1 text-tertiary">
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
               </div>
               <div className="text-left mt-1">
@@ -352,14 +353,14 @@ export default function LandingPageClient() {
                   sophistication is now free is incredible.&quot;
                 </blockquote>
                 <div className="flex items-center gap-3 mt-7">
-                  <div className="bg-gray-300 rounded-full w-11 h-11">
-                    <img
+                  <div className="bg-gray-300 rounded-full w-11 h-11 overflow-hidden relative">
+                    <Image
                       src="/review_sarah.avif"
-                      alt="Sarah Jenkins"
-                      title="Sarah Jenkins"
-                      className="w-11 h-11"
-                      loading="lazy"
-                      decoding="async"
+                      alt="Sarah Jenkins - Creative Director and verified Financial Atelier member"
+                      title="Sarah Jenkins - Creative Director and verified Financial Atelier member"
+                      width={44}
+                      height={44}
+                      className="object-cover"
                     />
                   </div>
                   <div className="flex flex-col gap-px">
@@ -377,40 +378,40 @@ export default function LandingPageClient() {
               className="flex flex-col bg-surface-highlight p-8 rounded-3xl space-y-6 shadow-sm transition-colors duration-300 ease"
             >
               <div className="flex gap-1 text-tertiary">
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
               </div>
               <div className="text-left mt-1">
@@ -420,14 +421,14 @@ export default function LandingPageClient() {
                   saved me $400 in the first month.&quot;
                 </blockquote>
                 <div className="flex items-center gap-3 mt-7">
-                  <div className="bg-gray-300 rounded-full w-11 h-11">
-                    <img
+                  <div className="bg-gray-300 rounded-full w-11 h-11 overflow-hidden relative">
+                    <Image
                       src="/review_marcus.avif"
-                      alt="Marcus Chen"
-                      title="Marcus Chen"
-                      className="w-11 h-11"
-                      loading="lazy"
-                      decoding="async"
+                      alt="Marcus Chen - Software Architect and verified Financial Atelier member"
+                      title="Marcus Chen - Software Architect and verified Financial Atelier member"
+                      width={44}
+                      height={44}
+                      className="object-cover"
                     />
                   </div>
                   <div className="flex flex-col gap-px">
@@ -445,40 +446,40 @@ export default function LandingPageClient() {
               className="flex flex-col bg-surface-highlight p-8 rounded-3xl space-y-6 shadow-sm transition-colors duration-300 ease"
             >
               <div className="flex gap-1 text-tertiary">
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
-                <img
+                <Image
                   src="/star.svg"
-                  alt="Star"
-                  title="Star"
-                  loading="lazy"
-                  decoding="async"
+                  alt="Premium five-star service rating icon"
+                  title="Premium five-star service rating icon"
+                  width={16}
+                  height={16}
                 />
               </div>
               <div className="text-left mt-1">
@@ -488,14 +489,14 @@ export default function LandingPageClient() {
                   without even feeling it.&quot;
                 </blockquote>
                 <div className="flex items-center gap-3 mt-7">
-                  <div className="bg-gray-300 rounded-full w-11 h-11">
-                    <img
+                  <div className="bg-gray-300 rounded-full w-11 h-11 overflow-hidden relative">
+                    <Image
                       src="/review_elena.avif"
-                      alt="Elena Rodriguez"
-                      title="Elena Rodriguez"
-                      className="w-11 h-11"
-                      loading="lazy"
-                      decoding="async"
+                      alt="Elena Rodriguez - Educator and verified Financial Atelier member"
+                      title="Elena Rodriguez - Educator and verified Financial Atelier member"
+                      width={44}
+                      height={44}
+                      className="object-cover"
                     />
                   </div>
                   <div className="flex flex-col gap-px">

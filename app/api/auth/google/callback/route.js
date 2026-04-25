@@ -11,7 +11,12 @@ export async function GET(req) {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 
-  const decoded = JSON.parse(atob(stateEncoded));
+  let decoded;
+  try {
+    decoded = JSON.parse(atob(stateEncoded));
+  } catch (e) {
+    return NextResponse.json({ error: "Invalid state format" }, { status: 400 });
+  }
 
   const storedState = req.cookies.get("oauth_state")?.value;
 
@@ -63,6 +68,9 @@ export async function GET(req) {
   );
 
   const res = NextResponse.redirect(new URL("/dashboard", req.url));
+
+  // Cleanup CSRF state
+  res.cookies.delete("oauth_state");
 
   res.cookies.set("token", token, {
     httpOnly: true,
