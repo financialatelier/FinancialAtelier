@@ -137,12 +137,12 @@ function AuthContent() {
           <div className="flex flex-col sm:flex-row gap-5">
             <a
               href="/api/auth/google"
-              className="flex gap-2 items-center justify-center border border-border py-4 px-6 font-bold w-full rounded-xl hover:bg-surface-highlight"
+              className="flex gap-2 items-center justify-center border border-border py-4 px-6 font-bold w-full rounded-xl transition-colors duration-200 hover:bg-surface-highlight cursor-pointer"
             >
               <FcGoogle className="w-6 h-6" /> Google
             </a>
 
-            <button className="flex gap-2 items-center justify-center border border-border py-4 px-6 font-bold w-full rounded-xl hover:bg-surface-highlight">
+            <button className="flex gap-2 items-center justify-center border border-border py-4 px-6 font-bold w-full rounded-xl transition-colors duration-200 hover:bg-surface-highlight cursor-pointer">
               <BsGithub className="w-6 h-6" /> Github
             </button>
           </div>
