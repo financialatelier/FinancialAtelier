@@ -217,7 +217,7 @@ export default function AuthFormClient({ mode }) {
 
       <button
         disabled={isBtnDisabled}
-        className={`border-none flex justify-center gap-2 items-center rounded-lg px-12 md:px-14 py-3.5 text-[0.95rem] text-white dark:text-white/90 bg-linear-to-r from-blue-700/90 to-blue-700 hover:scale-[1.01] transition-transform font-bold font-manrope tracking-wide transition-colors duration-200 group cursor-pointer ${isBtnDisabled && "opacity-70 cursor-not-allowed"} ${mode === "signup" ? "mt-0" : "mt-2"}`}
+        className={`border-none flex justify-center gap-2 items-center rounded-lg px-12 md:px-14 py-3.5 text-[0.95rem] text-white dark:text-white/90 bg-linear-to-r from-blue-700/90 to-blue-700 transition-transform font-bold font-manrope tracking-wide transition-colors duration-200 group ${isBtnDisabled ? "opacity-70 cursor-not-allowed" : "cursor-pointer hover:scale-[1.01]"} ${mode === "signup" ? "mt-0" : "mt-2"}`}
       >
         {isLoading
           ? "Processing..."
@@ -226,7 +226,9 @@ export default function AuthFormClient({ mode }) {
             : "Create Account"}
         {!isLoading && (
           <span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+            <ArrowRight
+              className={`w-5 h-5 ${isBtnDisabled ? "" : "group-hover:translate-x-1"} transition-transform duration-200`}
+            />
           </span>
         )}
       </button>
