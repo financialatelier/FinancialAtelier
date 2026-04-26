@@ -7,6 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import { useSearchParams } from "next/navigation";
 import { LazyMotion, domAnimation, motion } from "framer-motion";
 import { Suspense } from "react";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -22,6 +23,10 @@ function AuthContent() {
   const mode = validModes.includes(rawMode) ? rawMode : "login";
 
   const isLogin = mode === "login";
+
+  const handleSignIn = (provider) => {
+    signIn(provider, { callbackUrl: "/dashboard" });
+  };
 
   return (
     <div className="min-h-screen py-4 px-4 md:px-8 max-w-fit mx-auto bg-background text-neutral">
@@ -128,21 +133,24 @@ function AuthContent() {
 
           <AuthFormClient mode={mode} />
 
-          <div className="flex items-center my-7.5 gap-2">
+          <div className="flex items-center my-7 gap-2">
             <div className="h-px w-full bg-border"></div>
             <p className="text-xs opacity-50 uppercase">Or</p>
             <div className="h-px w-full bg-border"></div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-5">
-            <a
-              href="/api/auth/google"
+            <button
+              onClick={() => handleSignIn("google")}
               className="flex gap-2 items-center justify-center border border-border py-4 px-6 font-bold w-full rounded-xl transition-colors duration-200 hover:bg-surface-highlight cursor-pointer"
             >
               <FcGoogle className="w-6 h-6" /> Google
-            </a>
+            </button>
 
-            <button className="flex gap-2 items-center justify-center border border-border py-4 px-6 font-bold w-full rounded-xl transition-colors duration-200 hover:bg-surface-highlight cursor-pointer">
+            <button
+              onClick={() => handleSignIn("github")}
+              className="flex gap-2 items-center justify-center border border-border py-4 px-6 font-bold w-full rounded-xl transition-colors duration-200 hover:bg-surface-highlight cursor-pointer"
+            >
               <BsGithub className="w-6 h-6" /> Github
             </button>
           </div>
@@ -178,18 +186,16 @@ function AuthContent() {
                 >
                   Sign Up
                 </Link>{" "}
-                Now!
               </p>
             ) : (
               <p className="text-xs text-center font-medium text-secondary/70 mt-8">
-                Have an account?{" "}
+                Already have an account?{" "}
                 <Link
                   href="/auth?mode=login"
                   className="text-primary/90 hover:text-primary transition-colors duration-200 opacity-100 cursor-pointer font-semibold hover:underline!"
                 >
                   Login
-                </Link>{" "}
-                Now!
+                </Link>
               </p>
             )}
           </div>

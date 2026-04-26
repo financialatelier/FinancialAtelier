@@ -1,9 +1,11 @@
 // Components
 import Boilerplate from "@/components/Boilerplate";
 import FadeUp from "@/components/FadeUp";
-import dynamic from "next/dynamic";
+import { auth } from "@/auth";
+
 
 // Client side component
+import dynamic from "next/dynamic";
 const LandingPageStats = dynamic(() => import("./LandingPageStats"), {
   loading: () => <div className="h-20" />,
 });
@@ -22,7 +24,7 @@ export const metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -31,6 +33,9 @@ export default function Page() {
       "Master your wealth with Financial Atelier. Experience an editorial approach to expense tracking, budgeting, and wealth building with precision-engineered tools. Join 120,000+ users designing a smarter financial future for free.",
     url: "https://financialatelier.vercel.app",
   };
+
+  const session = await auth();
+  const isLoggedIn = !!session;
 
   return (
     <>

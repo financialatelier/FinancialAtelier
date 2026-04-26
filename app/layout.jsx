@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@/context/ThemeContext";
+import { Providers } from "@/components/Providers";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { Inter, Manrope } from "next/font/google";
@@ -73,12 +73,12 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <ThemeProvider>
+        <Providers>
           <SpeedInsights />
           <Analytics />
 
           <main>{children}</main>
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

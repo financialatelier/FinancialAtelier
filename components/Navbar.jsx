@@ -6,6 +6,8 @@ import { Wallet, Menu, X, Moon, Sun } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+import Image from "next/image";
 
 // Components
 import { useTheme } from "@/context/ThemeContext";
@@ -33,6 +35,11 @@ export default function Navbar() {
   const [portalTarget, setPortalTarget] = useState(null);
   const isDesktop = useIsDesktop();
   const pathname = usePathname();
+
+  const { data: session, status } = useSession();
+  const isAuthenticated = status === "authenticated";
+  const isLoading = status === "loading";
+  const user = session?.user;
 
   const getClass = (path) =>
     pathname === path ? "text-primary" : "text-secondary/80 hover:text-primary";
@@ -222,21 +229,54 @@ export default function Navbar() {
                 </ul>
 
                 <div className="pt-6 pb-8 flex flex-col text-[1rem] items-center justify-center gap-4">
-                  <Link
-                    href="/auth?mode=login"
-                    className="px-6 py-3.5 text-secondary/80 hover:text-secondary font-medium transition-colors duration-200 rounded-lg leading-widest hover:bg-secondary/8 dark:hover:bg-surface"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Login
-                  </Link>
+                  {isLoading ? (
+                    <div className="flex flex-col items-center justify-center gap-4 w-full">
+                      {/* Avatar skeleton */}
+                      <div className="w-10 h-10 rounded-full bg-secondary/20 animate-pulse" />
 
-                  <Link
-                    href="/auth?mode=signup"
-                    className="border-none rounded-lg px-12 md:px-14 py-3.5 text-[0.95rem] text-white dark:text-white/90 bg-linear-to-r from-blue-700/90 to-blue-700 hover:scale-[1.01] transition-transform font-bold font-manrope tracking-wide transition-colors duration-200"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Get Started
-                  </Link>
+                      {/* Button skeletons */}
+                      <div className="w-48 h-12 rounded-xl bg-secondary/20 animate-pulse" />
+                      <div className="w-48 h-12 rounded-xl bg-secondary/20 animate-pulse" />
+                    </div>
+                  ) : !isAuthenticated ? (
+                    <>
+                      <Link
+                        href="/auth?mode=login"
+                        className="px-6 py-3.5 text-secondary/80 hover:text-secondary font-medium transition-colors duration-200 rounded-lg leading-widest hover:bg-secondary/8 dark:hover:bg-surface"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Login
+                      </Link>
+
+                      <Link
+                        href="/auth?mode=signup"
+                        className="border-none rounded-lg px-12 md:px-14 py-3.5 text-[0.95rem] text-white dark:text-white/90 bg-linear-to-r from-blue-700/90 to-blue-700 hover:scale-[1.01] transition-transform font-bold font-manrope tracking-wide transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Get Started
+                      </Link>
+                    </>
+                  ) : (
+                    <Link
+                      href="/dashboard"
+                      className="w-10 h-10 bg-surface-highlight rounded-full border-none"
+                    >
+                      {user?.image ? (
+                        <Image
+                          className="rounded-full object-cover object-center dark:brightness-90 bg-linear-to-r from-blue-500/70 to-primary/90"
+                          src={user?.image}
+                          alt={user?.name}
+                          title={user?.name}
+                          width={40}
+                          height={40}
+                        />
+                      ) : (
+                        <div className="w-10 h-10 font-bold flex justify-center items-center text-xl rounded-full bg-linear-to-r from-blue-500/60 to-primary/80 font-manrope text-white">
+                          {user?.name.slice(0, 1).toUpperCase()}
+                        </div>
+                      )}
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>,
@@ -258,19 +298,49 @@ export default function Navbar() {
             </button>
           )}
 
-          <Link
-            href="/auth?mode=login"
-            className="px-6 py-3.5 text-secondary/80 hover:text-secondary font-medium transition-colors duration-200 rounded-lg leading-widest hover:bg-secondary/8 dark:hover:bg-surface"
-          >
-            Login
-          </Link>
+          {isLoading ? (
+            <div className="hidden lg:flex items-center gap-4">
+              <div className="w-8 h-8 rounded-full bg-secondary/20 animate-pulse" />
+              <div className="w-20 h-9 rounded-lg bg-secondary/20 animate-pulse" />
+              <div className="w-28 h-9 rounded-lg bg-secondary/20 animate-pulse" />
+            </div>
+          ) : !isAuthenticated ? (
+            <>
+              <Link
+                href="/auth?mode=login"
+                className="px-6 py-3.5 text-secondary/80 hover:text-secondary font-medium transition-colors duration-200 rounded-lg leading-widest hover:bg-secondary/8 dark:hover:bg-surface"
+              >
+                Login
+              </Link>
 
-          <Link
-            href="/auth?mode=signup"
-            className="border-none rounded-lg px-8 py-3.5 text-white dark:text-white/90 bg-linear-to-r from-blue-700/90 to-blue-700 hover:scale-[1.01] transition-transform font-bold font-manrope tracking-wide transition-colors duration-200"
-          >
-            Get Started
-          </Link>
+              <Link
+                href="/auth?mode=signup"
+                className="border-none rounded-lg px-8 py-3.5 text-white dark:text-white/90 bg-linear-to-r from-blue-700/90 to-blue-700 hover:scale-[1.01] transition-transform font-bold font-manrope tracking-wide transition-colors duration-200"
+              >
+                Get Started
+              </Link>
+            </>
+          ) : (
+            <Link
+              href="/dashboard"
+              className="w-10 h-10 flex overflow-hidden bg-surface-highlight rounded-full ml-3 border-none"
+            >
+              {user.image ? (
+                <Image
+                  className="rounded-full object-cover object-center dark:brightness-90 bg-linear-to-r from-blue-500/70 to-primary/90"
+                  src={user?.image}
+                  alt={user?.name}
+                  title={user?.name}
+                  width={36}
+                  height={36}
+                />
+              ) : (
+                <div className="w-10 h-10 font-bold flex justify-center items-center text-xl rounded-full bg-linear-to-r from-blue-500/60 to-primary/80 font-manrope text-white">
+                  {user?.name.slice(0, 1).toUpperCase()}
+                </div>
+              )}
+            </Link>
+          )}
         </div>
       </section>
     </>
