@@ -38,7 +38,7 @@ function AuthContent() {
         <motion.div
           layout
           transition={{ type: "spring", stiffness: 120, damping: 18 }}
-          className={`bg-blue-600 hidden md:flex py-12 pb-23 md:pb-10 px-8 sm:px-10 lg:px-16 flex-col justify-between gap-20
+          className={`bg-blue-600 hidden md:flex pt-12 md:pb-10 sm:px-10 lg:px-14 flex-col justify-between gap-20
           rounded-t-4xl md:rounded-t-none
           ${
             isLogin
@@ -113,7 +113,7 @@ function AuthContent() {
         <motion.div
           layout
           transition={{ type: "spring", stiffness: 120, damping: 18 }}
-          className={`bg-surface text-secondary pt-18 pb-8 px-8 lg:px-16 sm:px-10 flex flex-col
+          className={`bg-surface text-secondary pt-18 pb-8 px-6 sm:px-10 lg:px-14 flex flex-col
           rounded-4xl md:rounded-b-none w-[95vw] min-[420px]:w-[85vw] md:w-auto
           ${
             isLogin
