@@ -29,7 +29,7 @@ function AuthContent() {
   };
 
   return (
-    <div className="min-h-screen py-4 px-4 md:px-8 max-w-fit mx-auto bg-background text-neutral">
+    <div className="min-h-screen py-8 px-6 md:px-8 max-w-fit mx-auto bg-background text-neutral">
       <FadeUp
         delay={0.2}
         className="max-w-260 mx-auto grid grid-cols-1 md:grid-cols-2"
