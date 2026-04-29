@@ -12,9 +12,9 @@ export default function Footer() {
     pathname === path ? "text-primary" : "text-secondary/80 hover:text-primary";
 
   return (
-    <div className="border-t border-border mt-18 pt-17 pb-10 px-4 lg:px-16">
-      {/* Footer Section */}
-      <section className="container mx-auto max-w-md md:max-w-lg lg:max-w-7xl text-center lg:text-left items-center">
+    // Footer Section
+    <footer className="border-t border-border mt-18 pt-17 pb-10 px-4 lg:px-16">
+      <section className="container mx-auto max-w-md md:max-w-lg lg:max-w-6xl text-center lg:text-left items-center">
         <div className="grid lg:grid-cols-2 lg:gap-14 lg:justify-center lg:items-center">
           <div>
             <Link href="/">
@@ -185,6 +185,6 @@ export default function Footer() {
           </div>
         </div>
       </section>
-    </div>
+    </footer>
   );
 }

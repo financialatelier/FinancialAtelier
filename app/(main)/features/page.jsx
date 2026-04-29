@@ -178,8 +178,8 @@ export default function Page() {
         </section>
 
         {/* Multi-Device Compatible Section */}
-        <section className="container mx-auto max-w-xl md:max-w-2xl lg:max-w-7xl mt-10 px-4 lg:px-15">
-          <div className="mx-auto max-w-xl md:max-w-2xl lg:max-w-7xl text-left grid grid-cols-1 lg:grid-cols-2 gap-15 lg:gap-18 bg-[#2D3133] dark:bg-[#23282B] rounded-4xl pt-15.5 pb-10 px-5 sm:px-13.5 min-h-120">
+        <section className="container mx-auto max-w-xl md:max-w-2xl lg:max-w-6xl mt-10 px-4 lg:px-15 xl:px-0">
+          <div className="mx-auto max-w-xl md:max-w-2xl lg:max-w-6xl text-left grid grid-cols-1 lg:grid-cols-2 gap-15 lg:gap-18 bg-[#2D3133] dark:bg-[#23282B] rounded-4xl pt-15.5 pb-10 px-5 sm:px-13.5 min-h-120">
             <div className="text-center lg:text-left flex flex-col justify-center">
               <FadeUp
                 as="h3"
@@ -223,7 +223,7 @@ export default function Page() {
 
         {/* The Atelier Difference Section */}
         <section className="container mx-auto min-w-full mt-23 px-4 py-18 lg:px-15 bg-surface">
-          <div className="mx-auto max-w-xl md:max-w-2xl lg:max-w-5xl text-left grid grid-cols-1 lg:grid-cols-2 gap-15 px-5 sm:px-13.5">
+          <div className="mx-auto max-w-xl md:max-w-2xl lg:max-w-5xl xl:max-w-6xl text-left grid grid-cols-1 lg:grid-cols-2 gap-15 px-5 sm:px-13.5 xl:px-0">
             <div className="text-center lg:text-left flex flex-col justify-center">
               <FadeUp
                 as="h3"
@@ -268,7 +268,7 @@ export default function Page() {
             <FadeUp
               as="div"
               delay={0.4}
-              className="w-full md:w-[70%] aspect-3/4 bg-surface-highlight border border-border/20 mx-auto rounded-full p-4 shadow-sm relative"
+              className="w-full md:w-[70%] lg:w-[65%] aspect-3/4 bg-surface-highlight border border-border/20 mx-auto rounded-full p-4 shadow-sm relative"
             >
               <div className="absolute inset-0 rounded-full overflow-hidden m-4">
                 <Image

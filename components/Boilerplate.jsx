@@ -28,7 +28,7 @@ const Boilerplate = ({
       <div className="min-h-screen bg-background text-secondary">
         {/* Hero Section */}
         <section
-          className={`container mx-auto max-w-md md:max-w-xl lg:max-w-7xl px-4 lg:px-15 pt-33 xl:pt-40 text-center items-center ${landingPage ? "lg:text-left lg:grid grid-cols-2 items-center gap-12 xl:gap-15 2xl:gap-18 pb-13" : "pb-6 lg:pb-13"}`}
+          className={`container mx-auto max-w-md md:max-w-xl lg:max-w-6xl px-4 lg:px-15 pt-33 xl:pt-40 text-center items-center ${landingPage ? "lg:text-left lg:grid grid-cols-2 items-center gap-12 xl:gap-15 2xl:gap-18 pb-13 xl:px-0" : "pb-6 lg:pb-13"}`}
         >
           <div>
             {badge && (
@@ -89,7 +89,7 @@ const Boilerplate = ({
               <div className="flex relative">
                 <FadeUp
                   delay={0.5}
-                  className="w-fit xl:w-65 h-fit p-6 rounded-2xl shadow-sm border-none ml-2 min-[1125px]:ml-7 hidden lg:block bg-surface-highlight/85 dark:bg-surface absolute -bottom-7 z-20 transition-colors duration-400 ease"
+                  className="w-fit xl:w-65 h-fit p-6 rounded-2xl shadow-sm border-none ml-2 min-[1125px]:ml-7 hidden lg:block bg-surface-highlight/93 dark:bg-surface absolute -bottom-7 z-20 transition-colors duration-400 ease"
                   style={{ backdropFilter: "blur(15px)" }}
                 >
                   <div className="flex items-center gap-3">
@@ -110,7 +110,7 @@ const Boilerplate = ({
 
                 <FadeUp
                   delay={0.6}
-                  className="w-fit h-fit p-6 rounded-2xl shadow-sm border-none ml-6 hidden lg:block bg-surface-highlight/85 dark:bg-surface absolute -bottom-10 z-20 right-2 min-[1125px]:right-8 transition-colors duration-400 ease"
+                  className="w-fit h-fit p-6 rounded-2xl shadow-sm border-none ml-6 hidden lg:block bg-surface-highlight/93 dark:bg-surface absolute -bottom-10 z-20 right-2 min-[1125px]:right-8 transition-colors duration-400 ease"
                   style={{ backdropFilter: "blur(15px)" }}
                 >
                   <p className="text-[0.72rem] uppercase tracking-wide text-secondary/80">
@@ -133,12 +133,14 @@ const Boilerplate = ({
         {includesCTA && (
           // Final CTA Section
           <section className="container mx-auto max-w-xl md:max-w-3xl lg:max-w-7xl text-center px-4 mt-20 md:mt-24 lg:px-15">
-            <FadeUp className="max-w-5xl overflow-hidden bg-linear-to-r from-blue-700/90 to-blue-700 rounded-3xl p-12 md:p-16 lg:p-20 mx-auto relative flex flex-col items-center gap-6 text-white dark:text-white/90">
+            <FadeUp className="max-w-6xl overflow-hidden bg-linear-to-r from-blue-700/90 to-blue-700 rounded-3xl p-12 md:p-16 lg:p-20 mx-auto relative flex flex-col items-center gap-6 text-white dark:text-white/90">
               <h2 className="font-extrabold text-3xl sm:text-4xl md:text-5xl font-manrope leading-tight">
                 {CTATitle}
               </h2>
 
-              <p className="max-w-xl text-base mt-2 mb-3">{CTADescription}</p>
+              <p className="max-w-xl text-base mt-2 mb-3 lg:my-4">
+                {CTADescription}
+              </p>
 
               <Link
                 href="/auth?mode=signup"

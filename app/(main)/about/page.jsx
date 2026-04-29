@@ -59,8 +59,8 @@ export default function Page() {
       >
         {/* Philosophy Section */}
         <section className="container mt-10 px-6 sm:px-10 lg:px-15 py-24 lg:pb-28 bg-surface min-w-full">
-          <div className="max-w-xl md:max-w-2xl lg:max-w-7xl text-left mx-auto grid lg:grid-cols-3 gap-12 md:gap-14 lg:gap-17">
-            <div className="relative max-w-fit max-h-fit col-span-1 lg:sticky lg:top-30">
+          <div className="max-w-xl md:max-w-2xl lg:max-w-6xl text-left mx-auto grid lg:grid-cols-3 gap-12 md:gap-14 lg:gap-17">
+            <div className="relative max-w-fit max-h-fit col-span-1 lg:sticky lg:top-40">
               <FadeUp
                 as="h2"
                 className="text-3xl md:text-4xl font-manrope font-bold mb-6 text-secondary"
@@ -73,6 +73,7 @@ export default function Page() {
                 className="absolute bottom-0 left-0 h-1 bg-primary rounded-md"
                 initial={{ width: 0 }}
                 whileInView={{ width: 100 }}
+                delay={0.2}
               />
             </div>
 
@@ -102,7 +103,7 @@ export default function Page() {
                 <FadeUp
                   as="li"
                   delay={0.2}
-                  className="space-y-3 md:space-y-4 bg-surface-highlight p-6 xl:p-8 rounded-xl shadow-sm shadow-surface"
+                  className="space-y-3 md:space-y-4 bg-surface-highlight p-6 min-[400px]:p-8 rounded-xl shadow-sm shadow-surface h-fit md:h-69 lg:h-64"
                 >
                   <ShieldCheckIcon className="text-primary w-7 h-7 md:w-8 md:h-8" />
 
@@ -120,7 +121,7 @@ export default function Page() {
                 <FadeUp
                   as="li"
                   delay={0.3}
-                  className="space-y-3 md:space-y-4 bg-surface-highlight p-6 xl:p-8 rounded-xl shadow-sm shadow-surface"
+                  className="space-y-3 md:space-y-4 bg-surface-highlight p-6 min-[400px]:p-8 rounded-xl shadow-sm shadow-surface h-fit md:h-69 lg:h-64"
                 >
                   <MdArchitecture className="text-primary w-7 h-7 md:w-8 md:h-8" />
 
@@ -139,7 +140,7 @@ export default function Page() {
         </section>
 
         {/* Atelier Difference Section */}
-        <section className="container mt-10 px-6 sm:px-10 lg:px-15 pt-13 pb-20 lg:pb-24 max-w-xl md:max-w-2xl lg:max-w-7xl text-center mx-auto">
+        <section className="container mt-10 px-6 sm:px-10 lg:px-15 pt-13 pb-20 lg:pb-24 xl:px-0 max-w-xl md:max-w-2xl lg:max-w-6xl text-center mx-auto">
           <div className="flex flex-col justify-center items-center space-y-6">
             <FadeUp
               as="h2"

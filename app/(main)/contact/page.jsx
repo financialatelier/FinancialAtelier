@@ -49,7 +49,7 @@ export default function Page() {
         includesCTA={false}
       >
         {/* Contact Section */}
-        <section className="container mx-auto max-w-xl md:max-w-2xl lg:max-w-7xl mt-10 px-4 lg:px-15 pb-16 text-left grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-12">
+        <section className="container mx-auto max-w-xl md:max-w-2xl lg:max-w-6xl mt-10 px-4 lg:px-15 xl:px-0 pb-16 text-left grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-12">
           <div className="flex flex-col justify-center items-center flex-1 w-full lg:col-span-2 bg-surface px-5 sm:px-12 py-12 sm:pt-16 rounded-2xl">
             <div className="text-center mb-10 sm:mb-13 md:mb-15 lg:mb-13 space-y-5 sm:space-y-6">
               <FadeUp

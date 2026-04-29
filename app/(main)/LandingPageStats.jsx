@@ -29,7 +29,7 @@ export default function LandingPageStats() {
   }, []);
 
   return (
-    <section className="mx-auto max-w-md md:max-w-lg lg:max-w-7xl px-4 text-center sm:pt-5 lg:pt-7 lg:px-15">
+    <section className="mx-auto max-w-md md:max-w-lg lg:max-w-6xl px-4 text-center sm:pt-5 lg:pt-7 lg:px-15 xl:px-0">
       <p className="w-full bg-border h-px"></p>
       <ul
         ref={statsRef}

@@ -96,9 +96,9 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="absolute inset-0 min-w-screen min-h-screen backdrop-blur-md"></div>
       )}
-      <section className="fixed min-w-full h-20 bg-neutral/90 backdrop-blur-md border-b border-border p-4 pt-5 sm:px-7 md:px-10 lg:px-12 z-50 transition-colors duration-300 ease">
-        <div className="w-full mx-auto lg:max-w-6xl flex items-center justify-between transition-colors duration-300 ease">
-          <div className="flex justify-center items-center gap-30">
+      <section className="fixed w-full mt-4 sm:mt-6 px-4 min-[400px]:px-7 md:px-10 xl:px-0 z-50 transition-colors duration-300 ease">
+        <div className="w-full mx-auto lg:max-w-6xl bg-neutral/80 border border-border p-4 min-[400px]:px-10 md:px-12 lg:px-14 rounded-full flex items-center justify-between backdrop-blur-sm transition-colors duration-300 ease">
+          <div className="flex justify-center items-center gap-10 min-[1200px]:gap-30">
             <Link
               href="/"
               className="flex justify-center items-center text-lg sm:text-xl font-extrabold text-primary leading-tight font-manrope cursor-pointer gap-3 sm:gap-3.5"
@@ -135,7 +135,7 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="/contact"
+                href="/terms"
                 className={`font-medium transition-colors duration-200 tracking-wide ${getClass(
                   "/terms",
                 )}`}
@@ -186,7 +186,7 @@ export default function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <div
-                  className="fixed z-50 left-0 bottom-0 w-full h-[70vh] border-t border-border rounded-t-[2.5rem] shadow-[0_-10px_30px_rgba(0,0,0,0.15)] text-center pointer-events-auto backdrop-blur-none flex flex-col justify-between"
+                  className="relative z-50 left-0 bottom-0 w-screen h-[70vh] border-t border-border rounded-t-[2.5rem] shadow-[0_-10px_30px_rgba(0,0,0,0.15)] text-center pointer-events-auto backdrop-blur-none flex flex-col justify-between"
                   ref={sheetRef}
                   onClick={(e) => e.stopPropagation()}
                   onTouchStart={handleTouchStart}
@@ -236,6 +236,18 @@ export default function Navbar() {
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Contact
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        href="/terms"
+                        className={`font-medium transition-colors duration-200 tracking-wide ${getClass(
+                          "/terms",
+                        )}`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Terms
                       </Link>
                     </li>
                   </ul>
@@ -297,38 +309,39 @@ export default function Navbar() {
             )}
 
           <div className="hidden lg:flex text-center items-center text-sm justify-center gap-4">
-            {themeMounted && (
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-lg hover:bg-secondary/8 transition-[background-color] duration-200 text-secondary cursor-pointer"
-                aria-label="Toggle dark mode"
-              >
-                {theme === "light" ? (
-                  <Moon className="w-5 h-5" />
-                ) : (
-                  <Sun className="w-5 h-5" />
-                )}
-              </button>
-            )}
+            {isLoading ||
+              (themeMounted && (
+                <button
+                  onClick={toggleTheme}
+                  className="p-2 rounded-lg hover:bg-secondary/8 transition-[background-color] duration-200 text-secondary cursor-pointer"
+                  aria-label="Toggle dark mode"
+                >
+                  {theme === "light" ? (
+                    <Moon className="w-4.5 h-4.5" />
+                  ) : (
+                    <Sun className="w-4.5 h-4.5" />
+                  )}
+                </button>
+              ))}
 
             {isLoading ? (
-              <div className="hidden lg:flex items-center gap-4">
+              <div className="hidden lg:flex items-center gap-5">
                 <div className="w-8 h-8 rounded-full bg-secondary/20 animate-pulse" />
-                <div className="w-20 h-9 rounded-lg bg-secondary/20 animate-pulse" />
-                <div className="w-28 h-9 rounded-lg bg-secondary/20 animate-pulse" />
+                <div className="w-20 h-10 rounded-lg bg-secondary/20 animate-pulse" />
+                <div className="w-37 h-11.5 rounded-lg bg-secondary/20 animate-pulse" />
               </div>
             ) : !isAuthenticated ? (
               <>
                 <Link
                   href="/auth?mode=login"
-                  className="px-6 py-3.5 text-secondary/80 hover:text-secondary font-medium transition-colors duration-200 rounded-lg leading-widest hover:bg-secondary/8 dark:hover:bg-surface"
+                  className="px-6 py-3.25 text-secondary/80 hover:text-secondary font-medium transition-colors duration-200 rounded-lg leading-widest hover:bg-secondary/8 dark:hover:bg-surface"
                 >
                   Login
                 </Link>
 
                 <Link
                   href="/auth?mode=signup"
-                  className="border-none rounded-lg px-8 py-3.5 text-white dark:text-white/90 bg-linear-to-r from-blue-700/90 to-blue-700 hover:scale-[1.01] transition-transform font-bold font-manrope tracking-wide transition-colors duration-200"
+                  className="border-none rounded-lg px-8 py-3.25 text-white dark:text-white/90 bg-linear-to-r from-blue-700/90 to-blue-700 hover:scale-[1.01] transition-transform font-bold font-manrope tracking-wide transition-colors duration-200"
                 >
                   Get Started
                 </Link>
@@ -336,20 +349,20 @@ export default function Navbar() {
             ) : (
               <Link
                 href="/dashboard"
-                className="w-10 h-10 flex overflow-hidden bg-surface-highlight rounded-full ml-3 border-none"
+                className="w-11.5 h-11.5 flex overflow-hidden bg-surface-highlight rounded-full ml-5 border-none"
               >
-                {user.image ? (
+                {user?.image ? (
                   <Image
                     className="rounded-full object-cover object-center dark:brightness-90 bg-linear-to-r from-blue-500/70 to-primary/90"
                     src={user?.image}
                     alt={user?.name}
                     title={user?.name}
-                    width={40}
-                    height={36}
+                    width={46}
+                    height={42}
                     priority
                   />
                 ) : (
-                  <div className="w-10 h-10 font-bold flex justify-center items-center text-xl rounded-full bg-linear-to-r from-blue-500/60 to-primary/80 font-manrope text-white">
+                  <div className="w-12 h-12 font-bold flex justify-center items-center text-xl rounded-full bg-linear-to-r from-blue-500/60 to-primary/80 font-manrope text-white">
                     {user?.name.slice(0, 1).toUpperCase()}
                   </div>
                 )}

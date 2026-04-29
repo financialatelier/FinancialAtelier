@@ -1,7 +1,6 @@
 "use client";
 
 // Third party imports
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Breadcrumbs() {
@@ -33,47 +32,9 @@ export default function Breadcrumbs() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbList) }}
-      />
-
-      {/* The Visual UI */}
-      <nav
-        aria-label="Breadcrumb"
-        className="container mx-auto px-4 lg:px-15 mb-4"
-      >
-        <ol className="flex list-none p-0 text-xs uppercase tracking-widest font-bold text-secondary/60">
-          <li className="flex items-center">
-            <Link href="/" className="hover:text-primary transition-colors">
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-          </li>
-          {pathSegments.map((segment, index) => {
-            const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
-            const isLast = index === pathSegments.length - 1;
-            return (
-              <li key={href} className="flex items-center">
-                {isLast ? (
-                  <span className="text-primary">{segment}</span>
-                ) : (
-                  <>
-                    <Link
-                      href={href}
-                      className="hover:text-primary transition-colors"
-                    >
-                      {segment}
-                    </Link>
-                    <span className="mx-2">/</span>
-                  </>
-                )}
-              </li>
-            );
-          })}
-        </ol>
-      </nav>
-    </>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbList) }}
+    />
   );
 }

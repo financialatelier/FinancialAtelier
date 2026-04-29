@@ -3,7 +3,6 @@ import Boilerplate from "@/components/Boilerplate";
 import FadeUp from "@/components/FadeUp";
 import { auth } from "@/auth";
 
-
 // Client side component
 import dynamic from "next/dynamic";
 const LandingPageStats = dynamic(() => import("./LandingPageStats"), {
@@ -61,7 +60,7 @@ export default async function Page() {
 
         {/* About Project Section */}
         <section className="w-full bg-surface transition-colors duration-300 ease px-4 mt-14 md:mt-19 lg:mt-24 py-18 md:py-22 lg:py-24 lg:px-15">
-          <div className="container mx-auto max-w-md md:max-w-lg lg:max-w-7xl text-center">
+          <div className="container mx-auto max-w-md md:max-w-lg lg:max-w-6xl text-center">
             <div>
               <FadeUp
                 as="h2"
@@ -79,7 +78,7 @@ export default async function Page() {
                 future with absolute clarity.
               </FadeUp>
             </div>
-            <ul className="grid grid-cols-1 lg:grid-cols-3 gap-9 mt-13 lg:mt-16">
+            <ul className="grid grid-cols-1 lg:grid-cols-3 gap-9 lg:gap-12 mt-13 lg:mt-17">
               <FadeUp
                 as="li"
                 delay={0.3}
@@ -170,7 +169,7 @@ export default async function Page() {
         </section>
 
         {/* Mastery Section */}
-        <section className="container mx-auto max-w-md md:max-w-lg lg:max-w-7xl px-4 lg:px-15 text-center py-20 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
+        <section className="container mx-auto max-w-md md:max-w-lg lg:max-w-6xl px-4 lg:px-15 xl:px-0 text-center py-20 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
           <div>
             <div className="lg:text-left lg:max-w-lg">
               <FadeUp
@@ -252,7 +251,7 @@ export default async function Page() {
 
         {/* Testimonials Section */}
         <section className="w-full bg-surface px-4 mt-14 py-18 md:py-22 lg:py-24 lg:px-15">
-          <div className="container mx-auto max-w-md md:max-w-lg lg:max-w-7xl text-center">
+          <div className="container mx-auto max-w-md md:max-w-lg lg:max-w-6xl text-center">
             <div>
               <FadeUp
                 as="h3"
@@ -270,7 +269,7 @@ export default async function Page() {
                 and experiences within our community.
               </FadeUp>
             </div>
-            <ul className="grid grid-cols-1 lg:grid-cols-3 gap-9 mt-13 lg:mt-16">
+            <ul className="grid grid-cols-1 lg:grid-cols-3 gap-9 lg:gap-12 mt-13 lg:mt-16">
               <FadeUp
                 as="li"
                 delay={0.3}
@@ -283,8 +282,8 @@ export default async function Page() {
                       src="/star.svg"
                       alt="Premium five-star service rating icon"
                       title="Premium five-star service rating icon"
-                      width={16}
-                      height={16}
+                      width={20}
+                      height={20}
                     />
                   ))}
                 </div>
@@ -309,7 +308,7 @@ export default async function Page() {
                       <h4 className="text-sm font-manrope font-bold">
                         Sarah Jenkins
                       </h4>
-                      <p className="text-xs">Creative Director</p>
+                      <p className="text-xs opacity-90">Creative Director</p>
                     </div>
                   </div>
                 </div>
@@ -327,8 +326,8 @@ export default async function Page() {
                       src="/star.svg"
                       alt="Premium five-star service rating icon"
                       title="Premium five-star service rating icon"
-                      width={16}
-                      height={16}
+                      width={20}
+                      height={20}
                     />
                   ))}
                 </div>
@@ -353,7 +352,7 @@ export default async function Page() {
                       <h4 className="text-sm font-manrope font-bold">
                         Marcus Chen
                       </h4>
-                      <p className="text-xs">Software Architect</p>
+                      <p className="text-xs opacity-90">Software Architect</p>
                     </div>
                   </div>
                 </div>
@@ -371,8 +370,8 @@ export default async function Page() {
                       src="/star.svg"
                       alt="Premium five-star service rating icon"
                       title="Premium five-star service rating icon"
-                      width={16}
-                      height={16}
+                      width={20}
+                      height={20}
                     />
                   ))}
                 </div>
@@ -397,7 +396,7 @@ export default async function Page() {
                       <h4 className="text-sm font-manrope font-bold">
                         Elena Rodriguez
                       </h4>
-                      <p className="text-xs">Teacher</p>
+                      <p className="text-xs opacity-90">Teacher</p>
                     </div>
                   </div>
                 </div>
